@@ -1,6 +1,7 @@
-﻿using UnityEngine;
+﻿using UnityEditor;
+using UnityEngine;
 
-[CreateAssetMenu(fileName = "VertexPaintToolsConfiguration", menuName = "VertexPaintTools/Configuration", order = 0)]
+[CreateAssetMenu(fileName = "VPT_Configuration", menuName = "VertexPaintTools/Configuration", order = 0)]
 public class VPTConfiguration : ScriptableObject
 {
     [Header("Skin")]
@@ -16,7 +17,5 @@ public class VPTConfiguration : ScriptableObject
     public GameObject VPT_Brush;
     public float MinBrushSize = 0.1f;
     public float MaxBrushSize = 2f;
-
-    
 
 }

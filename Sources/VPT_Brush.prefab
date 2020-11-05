@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6141840579576944600}
   - component: {fileID: 4023405159769583943}
   m_Layer: 0
-  m_Name: Brush
+  m_Name: VPT_Brush
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -58,7 +58,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 69060bb76d6f7034891173f501827360, type: 2}
+  - {fileID: 2100000, guid: 0d3873c435b89a043b04f65c20cea85c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
