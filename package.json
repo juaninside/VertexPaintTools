@@ -1,0 +1,19 @@
+{
+  "name": "com.twinstudios.vertexpainttool",
+  "version": "1.0.0",
+  "displayName": "Vertex Paint Tool",
+  "description": "Vertex Painter Tool",
+  "unity": "2019.4",
+  "unityRelease": "8f1",
+  "keywords": [
+    "keyword1",
+    "keyword2",
+    "keyword3"
+  ],
+  "author": {
+    "name": "Unity",
+    "email": "unity@example.com",
+    "url": "https://www.unity3d.com"
+  },
+  "type": "tool"
+}
