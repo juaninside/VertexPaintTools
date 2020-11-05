@@ -193,7 +193,7 @@ class VPTEditor : Editor
     }
     private void LoadResources()
     {
-        _config = AssetDatabase.LoadAssetAtPath<VPTConfiguration>("Packages/Vertex Paint Tool/Sources/VPT_Configuration");
+        _config = Resources.Load<VPTConfiguration>("VPT_Configuration");
         _guiSkin = _config.GUISkin;
     }
     private void UpdateSkin()
