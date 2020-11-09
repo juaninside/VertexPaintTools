@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System;
 
 
 [RequireComponent(typeof(MeshCollider))]
@@ -20,13 +21,16 @@ public class VPTMesh : MonoBehaviour
     {
         var newMesh = new Mesh();
         var originalMesh = GetComponent<MeshFilter>().sharedMesh;
-        newMesh.vertices = originalMesh.vertices;
-        newMesh.triangles = originalMesh.triangles;
-        newMesh.uv = originalMesh.uv;
-        newMesh.normals = originalMesh.normals;
-        newMesh.colors = originalMesh.colors;
-        newMesh.tangents = originalMesh.tangents;
-        newMesh.name = originalMesh.name + " VPT" + gameObject.GetInstanceID();
+
+        foreach (var property in originalMesh.GetType().GetProperties())
+        {
+            if (property.GetSetMethod() != null)
+            {
+                newMesh.GetType().GetProperty(property.Name).SetValue(newMesh, originalMesh.GetType().GetProperty(property.Name).GetValue(originalMesh));
+            }            
+        }
+
+        newMesh.name = originalMesh.name + " Clone" + gameObject.GetInstanceID();
 
         return newMesh;
     }
