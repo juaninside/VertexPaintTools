@@ -19,4 +19,4 @@ MonoBehaviour:
   VPT_Brush: {fileID: 2738881524424640512, guid: 5e3133546a2c68d4bbd2bd57c94701c1,
     type: 3}
   MinBrushSize: 0.1
-  MaxBrushSize: 2
+  MaxBrushSize: 5
