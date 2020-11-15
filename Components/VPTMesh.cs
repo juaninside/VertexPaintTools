@@ -6,6 +6,7 @@ using UnityEditor;
 public class VPTMesh : MonoBehaviour
 {
     private Mesh _mesh;
+#if UNITY_EDITOR
     [HideInInspector]
     public Mesh Mesh
     {
@@ -43,5 +44,5 @@ public class VPTMesh : MonoBehaviour
 
         return newMesh;
     }
-
+#endif
 }
