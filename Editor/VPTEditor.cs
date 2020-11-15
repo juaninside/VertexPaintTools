@@ -3,8 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
 using UnityEditor;
+using UnityEditor.SceneManagement;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 
 [CustomEditor(typeof(VPTMesh))]
 class VPTEditor : Editor
@@ -260,7 +261,7 @@ class VPTEditor : Editor
         }
 
         target.Mesh.SetColors(colors);
-
+        EditorSceneManager.MarkSceneDirty(SceneManager.GetActiveScene());
     }
     private void PaintVertexFill(VPTMesh target)
     {
@@ -278,7 +279,7 @@ class VPTEditor : Editor
         }
 
         target.Mesh.SetColors(colors);
-
+        EditorSceneManager.MarkSceneDirty(SceneManager.GetActiveScene());
     }
     private Color GetColor(Color currentColor, float distance)
     {
