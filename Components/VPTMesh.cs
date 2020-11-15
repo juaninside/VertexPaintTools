@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System;
-
+using UnityEditor;
 
 [RequireComponent(typeof(MeshCollider))]
 public class VPTMesh : MonoBehaviour
@@ -11,8 +11,17 @@ public class VPTMesh : MonoBehaviour
     {
         get
         {
-            if (_mesh == null)
-                GetComponent<MeshFilter>().sharedMesh = _mesh = GetUniqueMesh();
+            if (GetComponent<VPTUniqueMesh>() == null)
+            {
+                ObjectFactory.AddComponent<VPTUniqueMesh>(gameObject);
+                _mesh = GetComponent<MeshFilter>().sharedMesh = GetUniqueMesh();
+
+            }
+            else
+            {
+                _mesh = GetComponent<MeshFilter>().sharedMesh;
+            }
+
             return _mesh;
         }
     }
@@ -27,7 +36,7 @@ public class VPTMesh : MonoBehaviour
             if (property.GetSetMethod() != null)
             {
                 newMesh.GetType().GetProperty(property.Name).SetValue(newMesh, originalMesh.GetType().GetProperty(property.Name).GetValue(originalMesh));
-            }            
+            }
         }
 
         newMesh.name = originalMesh.name + " Clone" + gameObject.GetInstanceID();
